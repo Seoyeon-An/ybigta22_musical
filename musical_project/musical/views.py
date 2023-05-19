@@ -79,7 +79,7 @@ def calculate(df, gender, age, keyword, n=3):
     return result_df
 
 def musical_recommend(request):
-    THIS_FOLDER = Path(__file__).parent.resolve()
+    THIS_FOLDER = Path(__file__).parent.parent.resolve()
     df = pd.read_csv(THIS_FOLDER/'전체뮤지컬_인코딩_imageurl추가.csv')
     
     if request.method == 'GET':
