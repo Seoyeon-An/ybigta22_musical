@@ -1,0 +1,8 @@
+*.pyc
+*~
+__pycache__
+base
+db.sqlite3
+/static
+.DS_Store
+test.ipynb

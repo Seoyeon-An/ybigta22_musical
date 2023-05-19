@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>Musical_Recommendation</title>
+    <style>
+        body{
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div><img src= "{% static 'img/home.png' %}"></div>
+    <h1>YBIGTA 뮤지컬 추천 시스템</h1><br>
+    <div id = "top">환영합니다 {{user_name}}님!</div><br>
+    <div>
+    <form action = "{% url 'results' %}">
+        {% csrf_token %}
+        <p>
+            <input type="radio" name="gender" value="여성"> 여성
+            <input type="radio" name="gender" value="남성"> 남성
+        </p>
+        <p>
+            <input type="radio" name="old" value="10대"> 10대
+            <input type="radio" name="old" value="20대"> 20대
+            <input type="radio" name="old" value="30대"> 30대
+            <input type="radio" name="old" value="40대"> 40대
+            <input type="radio" name="old" value="50대"> 50대 이상
+        </p>
+        <p>
+            <input type="checkbox" name="keyword" value="코미디"> 코미디
+            <input type="checkbox" name="keyword" value="판타지"> 판타지
+            <input type="checkbox" name="keyword" value="미스터리"> 미스터리
+            <input type="checkbox" name="keyword" value="공포"> 공포
+            <input type="checkbox" name="keyword" value="액션"> 액션
+            <input type="checkbox" name="keyword" value="가족"> 가족
+            <input type="checkbox" name="keyword" value="모험"> 모험
+            <input type="checkbox" name="keyword" value="전쟁"> 전쟁
+            <input type="checkbox" name="keyword" value="시대극"> 시대극
+            <input type="checkbox" name="keyword" value="범죄"> 범죄    
+            <input type="checkbox" name="keyword" value="로맨스"> 로맨스
+            <input type="checkbox" name="keyword" value="종교"> 종교
+            <input type="checkbox" name="keyword" value="퀴어"> 퀴어
+            <input type="checkbox" name="keyword" value="스포츠"> 스포츠
+            <input type="checkbox" name="keyword" value="정치"> 정치
+            <input type="checkbox" name="keyword" value="법정"> 법정
+            <input type="checkbox" name="keyword" value="재난"> 재난
+            <input type="checkbox" name="keyword" value="성장"> 성장
+            <input type="checkbox" name="keyword" value="소설 원작"> 소설 원작
+            <input type="checkbox" name="keyword" value="영화 원작"> 영화 원작
+            <input type="checkbox" name="keyword" value="실화 기반"> 실화 기반
+            <input type="checkbox" name="keyword" value="우정"> 우정
+            <input type="checkbox" name="keyword" value="청춘"> 청춘
+            <input type="checkbox" name="keyword" value="복수"> 복수
+            <input type="checkbox" name="keyword" value="키즈"> 키즈
+            <input type="checkbox" name="keyword" value="폭력"> 폭력
+            <input type="checkbox" name="keyword" value="선정"> 선정
+            <input type="checkbox" name="keyword" value="드라마"> 드라마
+            <input type="checkbox" name="keyword" value="스릴러"> 스릴러
+        </p>
+        <p>
+            <input type="submit" value="제출">
+        </p>
+    </form>
+</div>
+</body>
+</html>
