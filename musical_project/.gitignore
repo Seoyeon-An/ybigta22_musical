@@ -4,5 +4,6 @@ __pycache__
 base
 db.sqlite3
 /static
-.DS_Store
+.DS_Storegit
 test.ipynb
+test2.ipynb
