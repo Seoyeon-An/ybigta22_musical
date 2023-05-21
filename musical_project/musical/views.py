@@ -13,12 +13,6 @@ from numpy.linalg import norm
 def index(request):
     return render(request, 'musical/index.html')
 
-def ver1(request):
-    return render(request, 'musical/ver1.html')
-
-def ver2(request):
-    return render(request, 'musical/ver2.html')
-
 def post(request):
 
     if request.method == 'POST':
@@ -137,7 +131,7 @@ def calculate(df, gender, age, keyword, n=3):
 
 def musical_recommend(request):
     THIS_FOLDER = Path(__file__).parent.parent.resolve()
-    df = pd.read_csv(THIS_FOLDER/'전체뮤지컬_인코딩_imageurl추가.csv')
+    df = pd.read_csv(THIS_FOLDER/'전체뮤지컬_인코딩_imageurl추가_최종.csv')
     
     if request.method == 'GET':
         gender = request.GET.get('gender')
