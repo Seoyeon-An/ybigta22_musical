@@ -194,10 +194,11 @@
                 }
             });
 
-            $("input[name='keyword']").change(function() {
-                if ($(this).is(":checked")) {
-                    $("input[type='submit']").removeClass("hidden");
-                    $(".submit_button").removeClass("hidden");
+            $("input[name='age']").on('keyup', function(e) {
+                if (e.key === 'Enter' && $(this).val() !== '') {
+                    e.preventDefault();  // 기본 엔터 동작 방지
+                    $(".old-question").addClass("hidden");
+                    $(".custom-checkbox").removeClass("hidden");
                 }
             });
             $("#top").on("animationend", function() {
@@ -210,6 +211,14 @@
             $("#second_top").on("animationend", function() {
             $(".gender-question").removeClass("hidden");
             });
+        });
+        $("form").submit(function(e) {
+            e.preventDefault();  // 기본 submit 동작 방지
+            if ($("input[name='keyword']:checked").length > 0) {
+                this.submit();  // 선택된 키워드가 있을 경우에만 결과 페이지로 이동
+            } else {
+                alert("당신 정말 이러기야? 키워드를 선택해야지!");
+            }
         });
     </script>
 </head>
