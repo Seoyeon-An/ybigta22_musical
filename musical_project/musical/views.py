@@ -131,13 +131,12 @@ def calculate(df, gender, age, keyword, n=3):
 
 def musical_recommend(request):
     THIS_FOLDER = Path(__file__).parent.parent.resolve()
-    df = pd.read_csv(THIS_FOLDER/'전체뮤지컬_인코딩_imageurl추가_최종.csv')
+    df = pd.read_csv(THIS_FOLDER/'전체뮤지컬_인코딩_imageurl추가_id추가.csv')
     
     if request.method == 'GET':
         gender = request.GET.get('gender')
         age = request.GET.get('age')
         keyword = request.GET.getlist('keyword')
-    # user = name
         
     values_df = calculate(df, gender, age, keyword)
     data = {
@@ -146,17 +145,20 @@ def musical_recommend(request):
         'age' : age,
         'keyword' : keyword,
         'title_1' : values_df.title.iloc[0],
-        'img_url_1' : values_df.image_url.iloc[0], 
+        'img_url_1' : values_df.image_url.iloc[0],
+        'musical_id_1' : "img/"+(str(values_df.id.iloc[0])+".png"),
         'title_2' : values_df.title.iloc[1],
         'img_url_2' : values_df.image_url.iloc[1], 
+        'musical_id_2' : "img/"+(str(values_df.id.iloc[1])+".png"),
         'title_3' : values_df.title.iloc[2],
         'img_url_3' : values_df.image_url.iloc[2], 
+        'musical_id_3' : "img/"+(str(values_df.id.iloc[2])+".png"),
     }
     
     return render(request, 'musical/results_ODHversion.html', data)
         
     
-        
+
         
     
     
