@@ -187,18 +187,17 @@
                 }
             });
 
-            $("input[name='age']").on('keyup', function(e) {
-                if (e.key === 'Enter' && $(this).val() !== '') {
-                    $(".old-question").addClass("hidden");
-                    $(".custom-checkbox").removeClass("hidden");
-                }
-            });
-
-            $("input[name='age']").on('keyup', function(e) {
+            $("input[name='age']").on('keydown', function(e) {
                 if (e.key === 'Enter' && $(this).val() !== '') {
                     e.preventDefault();  // 기본 엔터 동작 방지
                     $(".old-question").addClass("hidden");
                     $(".custom-checkbox").removeClass("hidden");
+                }
+            });
+            $("input[name='keyword']").change(function() {
+                if ($(this).is(":checked")) {
+                    $("input[type='submit']").removeClass("hidden");
+                    $(".submit_button").removeClass("hidden");
                 }
             });
             $("#top").on("animationend", function() {
