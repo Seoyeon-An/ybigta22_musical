@@ -11,7 +11,7 @@ from numpy import dot
 from numpy.linalg import norm
 
 def index(request):
-    return render(request, 'musical/index.html')
+    return render(request, 'musical/index_ODHversion2.html')
 
 def post(request):
 
@@ -19,7 +19,7 @@ def post(request):
         username = request.POST.get('name')
         data={'user_name' : username}
 
-    return render(request, 'musical/index_name.html', data)
+    return render(request, 'musical/index_name_ODHversion2.html', data)
 
 # def post2(request):
 
@@ -153,7 +153,7 @@ def musical_recommend(request):
         'img_url_3' : values_df.image_url.iloc[2], 
     }
     
-    return render(request, 'musical/results.html', data)
+    return render(request, 'musical/results_ODHversion.html', data)
         
     
         
