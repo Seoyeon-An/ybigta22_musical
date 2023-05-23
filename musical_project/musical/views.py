@@ -155,7 +155,7 @@ def musical_recommend(request):
         'musical_id_3' : "img/"+(str(values_df.id.iloc[2])+".png"),
     }
     
-    return render(request, 'musical/results_ODHversion.html', data)
+    return render(request, 'musical/results_ODHversion2.html', data)
         
     
 
