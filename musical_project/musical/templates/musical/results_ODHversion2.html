@@ -177,19 +177,19 @@
         <div class="musical_items_container">
             <div class="musical_item" id="first_musical">
                 <img src="{{img_url_3}}" class="poster">
-                <img src= "{% static 'img/'|add:musical_id|add:'.png' %}" class="wordcloud hidden">
+                <img src= "{% static musical_id_3 %}" class="wordcloud hidden">
                 <br>
                 <p>3위 : {{title_3}}</p>
             </div>
             <div class="musical_item" id="second_musical">
                 <img src="{{img_url_1}}" class="poster">
-                <img src="{% static 'img/'|add:musical_id|add:'.png' %}" class="wordcloud hidden">
+                <img src="{% static musical_id_1 %}" class="wordcloud hidden">
                 <br>
                 <p>1위 : {{title_1}}</p>
             </div>
             <div class="musical_item" id="third_musical">
                 <img src="{{img_url_2}}" class="poster">
-                <img src="{% static 'img/'|add:musical_id|add:'.png' %}" class="wordcloud hidden">
+                <img src="{% static musical_id_2 %}" class="wordcloud hidden">
                 <br>
                 <p>2위 : {{title_2}}</p>
             </div>
